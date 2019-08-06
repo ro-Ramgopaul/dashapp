@@ -20715,6 +20715,18 @@ a.text-muted:hover {
   color: #e6e8ea;
 }@charset "UTF-8";
 
+.text-blue {
+  color: #3490dc;
+}
+
+.text-indigo {
+  color: #6574cd;
+}
+
+.text-purple {
+  color: #9561e2;
+}
+
 /*!
  * Bootstrap v4.3.1 (https://getbootstrap.com/)
  * Copyright 2011-2019 The Bootstrap Authors
@@ -37186,5 +37198,15 @@ readers do not read off random characters that represent icons */
 
 .fab {
   font-family: "Font Awesome 5 Brands";
+}
+
+.navbar-laravel {
+  background-color: #fff;
+  box-shadow: 0 2px 4px;
+}
+
+.router-link-exact-active {
+  background-color: red !important;
+  color: #fff !important;
 }
 
