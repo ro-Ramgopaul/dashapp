@@ -10,7 +10,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-    <title>AdminLTE 3 | Starter</title>
+    <title>Ro's DashApp</title>
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <link rel="stylesheet" href="/css/app.css">
@@ -73,7 +73,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                          with font-awesome or any other icon font library -->
                     <li class="nav-item">
                             <router-link to="/dashboard" tag="a" class="nav-link"  active-class="active" exact>
-                            <i class="nav-icon fas fa-tachometer-alt"></i>
+                            <i class="nav-icon fas fa-tachometer-alt text-blue"></i>
                             <p>
                                 Dashboard
                             </p>
@@ -89,16 +89,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="#" class="nav-link active">
-                                    <i class="fas fa-circle nav-icon"></i>
-                                    <p>Active Page</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    <i class="fas fa-circle nav-icon"></i>
-                                    <p>Inactive Page</p>
-                                </a>
+                                <router-link to="/users" tag="a" class="nav-link"  active-class="active" exact>
+                                    <i class="fas fa-users nav-icon"></i>
+                                    <p>Users</p>
+                                </router-link>
                             </li>
                         </ul>
                     </li>
@@ -111,12 +105,18 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         </router-link>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link">
+                        <a class="nav-link" href="{{ route('logout') }}"
+                           onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
                             <i class="nav-icon fas fa-power-off"></i>
                             <p>
-                                Logout
+                                {{ __('Logout') }}
                             </p>
                         </a>
+
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            @csrf
+                        </form>
                     </li>
                 </ul>
             </nav>
@@ -149,7 +149,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             RAR Web Apps
         </div>
         <!-- Default to the left -->
-        <strong>Copyright &copy; 2014-2019 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
+        <strong>Copyright &copy; 2014-2019 <a href="https://rarwebapps.com">RAR Web Apps</a>.</strong> All rights reserved.
     </footer>
 </div>
 <!-- ./wrapper -->
